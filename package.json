@@ -1,0 +1,15 @@
+{
+  "name": "wave-house-booking-system",
+  "version": "1.0.0",
+  "description": "Wave House Recording Studio Booking System",
+  "main": "src/main.py",
+  "scripts": {
+    "start": "gunicorn src.main:app --bind 0.0.0.0:$PORT",
+    "build": "cd frontend && npm ci && npm run build && mkdir -p ../static && cp -r dist/* ../static/",
+    "dev": "FLASK_APP=src/main.py FLASK_ENV=development flask run --host=0.0.0.0"
+  },
+  "engines": {
+    "python": ">=3.8",
+    "node": ">=18.0.0"
+  }
+}
